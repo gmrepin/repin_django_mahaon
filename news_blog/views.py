@@ -3,7 +3,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 # Create your views here.
 def index(request):
-    return render(request, 'new_blog/index.html', {'articles':articles})
+    return render(request, 'new_blog/news_list.html', {'articles':articles})
+def get_article(request,article_id):
+    return render(request,'new_blog/news_article.html',{'articles':articles[article_id -1]})
 articles = [
    {
        'id': 1,
